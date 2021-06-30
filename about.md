@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm an automation engineer from Finland. Coding has been my hobby since I was like 10 years old. Nowadays I do some code for living too, however I'm very interested in automation, electrics and mechanics. 
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+### Education
+- Automation/hydraulics engineer MSc (Tampere University of Technology, Finland)
+- Electrical/automation engineer BSc (Tampere University of Applied Sciences, Finland)
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[j.isotalo91@gmail.com](mailto:j.isotalo91@gmail.com)
