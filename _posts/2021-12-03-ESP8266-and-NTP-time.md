@@ -10,11 +10,12 @@ Naturally, I needed to get the active timestamp that is updated fron NTP and wor
 However there were lot's of different guides and libraries for the job. Finally found the simplest solution
 that has been working without any hassle. And the best: No additional libraries are needed.
 
-Source is mainly from https://github.com/esp8266/Arduino/blob/master/libraries/esp8266/examples/NTP-TZ-DST/NTP-TZ-DST.ino There are many other examples too.
+Source is mainly from [https://github.com/esp8266/Arduino/blob/master/libraries/esp8266/examples/NTP-TZ-DST/NTP-TZ-DST.ino](https://github.com/esp8266/Arduino/blob/master/libraries/esp8266/examples/NTP-TZ-DST/NTP-TZ-DST.ino)
+
 ## Get active timestamp
 ```c++
 #include <TZ.h>
-#include <time.h>       // time() ctime()
+#include <time.h>
 
 //call configTime somewhere in the beginning
 //  1st parameter is the time zone (here UTC0)
@@ -30,7 +31,7 @@ uint32_t epochTime = time(nullptr);
 Default NTP sync interval is 1 hour.
 ```c++
 #include <TZ.h>
-#include <time.h>       // time() ctime()
+#include <time.h>
 
 //call configTime somewhere in the beginning
 //  1st parameter is the time zone (here UTC0)
@@ -62,7 +63,8 @@ uint32_t sntp_update_delay_MS_rfc_not_less_than_15000() { return 15000; } //ms -
 I have created timestamp strings in the following way. Note that the timestamp won't take 72 bytes but if the char[] is smaller the sprintf() gives a warning 
 as the output _might_ be that long.
 
-The following creates a string like `10.11.2021 - 15:30:45`.
+The following creates a string like `10.11.2021 - 15:30:45`. Note use of `time_t` instead of `uint32_t`. If you have uint, cast it to time_t first like `time_t epochTime = (time_t)yourEpochTime`.
+
 ```c++
 time_t epochTime = time(nullptr);
 
@@ -76,4 +78,4 @@ sprintf(DateAndTimeString, "%02d.%02d.%04d %02d:%02d:%02d", time->tm_mday,
         time->tm_sec);
 ```
 
-See more examples from https://github.com/esp8266/Arduino/blob/master/libraries/esp8266/examples/NTP-TZ-DST/NTP-TZ-DST.ino
+See more examples from [https://github.com/esp8266/Arduino/blob/master/libraries/esp8266/examples/NTP-TZ-DST/NTP-TZ-DST.ino](https://github.com/esp8266/Arduino/blob/master/libraries/esp8266/examples/NTP-TZ-DST/NTP-TZ-DST.ino)
