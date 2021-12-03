@@ -20,7 +20,7 @@ A **boring** list of some techiques I have used... I hate these kind of lists bu
 - .NET, C#, WinForms
 - C++, Arduino, ESP8266
 - PHP, HTML, CSS
-- Node.js, Javascript, jQuery
+- Node.js, Javascript, React, jQuery, Bootstrap, Material-UI
 - MYSQL, SQLite, PostgreSQL
 - MQTT, REST
 
