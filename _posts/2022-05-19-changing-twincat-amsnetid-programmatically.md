@@ -44,7 +44,7 @@ Windows Registry Editor Version 5.00
 
 A simple code using C# under .NET Framework can also do the trick. Note that the application needs to be run as an administrator.
 
-```C#
+```cs
 //Using Microsoft.Win32
 var key = Registry.LocalMachine.OpenSubKey(@"Software\WOW6432Node\Beckhoff\TwinCAT3\System", true);
 key.SetValue("RequestedAmsNetId", new byte[] { 192, 168, 5, 131, 1, 2 }, RegistryValueKind.Binary);
