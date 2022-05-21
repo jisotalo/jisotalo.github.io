@@ -14,6 +14,7 @@ Vakiona kyseinen liesi toimii maakaasulla, mutta sen saa suuttimet vaihtamalla t
 Oli yllättävän vaikea löytää mitkä ovat okeat suuttimet joten ajattelin kirjottaa ylös jos jotain helpottaa.
 
 **Suutin 86**
+
 ![image](https://user-images.githubusercontent.com/13457157/169641841-666cf67e-e4e6-4c28-bef0-3dbabb0cb453.png)
 
 Electrolux-osanumero: 3544004322
