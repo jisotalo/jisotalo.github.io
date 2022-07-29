@@ -136,7 +136,7 @@ END_VAR</textarea>
   <script>
     function changeInputEnable(sender, inputID) {
       sender.checked 
-        ? document.getElementById(inputID).removeAttribute('disabled') 
+        ? document.getElementById(inputID).removeAttribute('disabled')
         : document.getElementById(inputID).setAttribute('disabled', true);
     }
 
@@ -156,7 +156,9 @@ END_VAR</textarea>
         onChangeMinGap: document.getElementById('onChangeMinGap').value,
         onEventEnable: document.getElementById('onEventEnable').checked,
         onEventVariable: document.getElementById('onEventVariable').value,
-      }
+      };
+      
+      console.log('Creating file based on data:', data);
 
       let gvl = `<GVL>
 <Declarations><![CDATA[${data.declaration}]]></Declarations>
@@ -169,7 +171,7 @@ END_VAR</textarea>
   <TransmissionOnChange>${data.onChangeEnable ? 'True' : 'False'}</TransmissionOnChange>
   <TransmissionOnEvent>${data.onEventEnable ? 'True' : 'False'}</TransmissionOnEvent>
   <Interval>${data.cyclicInterval}</Interval>
-  <MinGap>${data.MinGap}</MinGap>
+  <MinGap>${data.onChangeMinGap}</MinGap>
   <EventVariable>${data.onEventVariable}</EventVariable>
   <ProtocolSettings>
     <ProtocolSetting Name="Broadcast Adr." Value="${data.broadcastAddress}" />
