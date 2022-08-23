@@ -5,6 +5,16 @@
 
     {% include meta.html %}
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2KFX1SMCN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-Q2KFX1SMCN');
+    </script>
+
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -47,7 +57,5 @@
         </footer>
       </div>
     </div>
-
-    {% include analytics.html %}
   </body>
 </html>
