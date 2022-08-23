@@ -14,7 +14,7 @@ Hankin Burrel S12 HD+SMS III -riistakameran mökille valvontakamerakäyttöön. 
 ## Ongelma
 Gmail on jatkuvasti tiukentanut ns. ei-turvallisten sovellusten pääsyä sähköpostiin. Tästä on ollut paljonkin [keskustelua](https://news.ycombinator.com/item?id=30513825). 30.05.2022 alkaen ei enää sähköpostin lähetys ole toiminut perinteisellä tavalla, eli käyttäen tunnusta ja salasanaa.
 
-https://support.google.com/accounts/answer/6010255?hl=fi
+[https://support.google.com/accounts/answer/6010255?hl=fi](https://support.google.com/accounts/answer/6010255?hl=fi)
 
 Jos Burrelin riistakamerassa (ja varmasti muissakin kameroissa) asettaa Gmailin käytettäväksi sähköpostiksi, laite kyllä yrittää lähettää mutta ei onnistu. Ja se siinä, ei mitään selkeää syytä miksi (*nice*).
 
@@ -28,30 +28,38 @@ Jotta Gmail-lähetys toimii, täytyy tehdä seuraavat asiat:
 ### Kaksivaiheisen tunnistautumisen aktivoiminen
 1. Kirjaudu Gmailiisi normaalisti
 2. Valitse oikeasta yläkulmasta nimikirjaimesi alta asetusvalikko ja valitse `Ylläpidä Google-tiliäsi`.
+
 ![image](https://user-images.githubusercontent.com/13457157/186183976-2525d55e-5898-4d82-aa58-a5ae99197f89.png)
+
 3. Valitse `Tietoturva`
 4. `Googleen kirjautuminen` -osiossa klikkaa `Kaksivaiheinen vahvistus` -riviä
 4. Ota vahvistus käyttöön ohjeiden mukaan.
 
 ### Sovellussalasanan luonti
 
-Lisätietoja: https://support.google.com/accounts/answer/185833
+Lisätietoja: [https://support.google.com/accounts/answer/185833](https://support.google.com/accounts/answer/185833)
 
 1. Kirjaudu Gmailiisi normaalisti
 2. Valitse oikeasta yläkulmasta nimikirjaimesi alta asetusvalikko ja valitse `Ylläpidä Google-tiliäsi`.
 3. Valitse `Tietoturva`
 4. `Googleen kirjautuminen` -osiossa klikkaa `Sovellussalasanat`-riviä
 5. Lisää uusi valitsemalla `Valitse sovellus` ja sen alta `Muu (omavalintainen nimi)`. Kirjoita nimeksi esim. Riistakamera ja paina `Luo`
+
 ![image](https://user-images.githubusercontent.com/13457157/186186074-f6a47940-359d-406f-ab0b-5f6cb0e02286.png)
+
 6. Ota itsellesi salasana talteen. Tämä on nyt riistakameran käyttämä salasana.
+
 ![image](https://user-images.githubusercontent.com/13457157/186186655-9e940cba-eef8-415e-af79-6df2b035999c.png)
+
 7. Nyt uusi sovellussalasana on luotu ja sitä voidaan käyttää ei-turvallisissa ohjelmissa
+
 ![image](https://user-images.githubusercontent.com/13457157/186187495-7df4d48f-5187-4cc6-9939-e2d67118af91.png)
 
 ### Riistakameran konfigurointi
 
 1. Konfiguroi riistakamera kuten ennekin
 2. Käytä salasanana oman Gmail-salasanasi sijasta äsken luotua sovelluksen salasanaa.
+
 ![image](https://user-images.githubusercontent.com/13457157/186188671-0556fec7-b228-4d5f-bd95-581ce5ac4adb.png)
 
 *Esimerkki konfigurointiohjelmasta, tietysti sama homma jos konffaa riistakameran näytöltä* 
