@@ -33,12 +33,11 @@ So to listen for TwinCAT Logger, one should add device notification request to f
 * Data length: 1024
 * Transmission mode: cyclic
 
-## Unpacking received data
+## Testing to subscribe
 
 To see how it works, let's create a simple test using [ads-client library](https://github.com/jisotalo/ads-client/).
 
 ```js
-//test-1.js
 const ads = require('ads-client');
 
 const client = new ads.Client({
@@ -64,7 +63,7 @@ client.connect()
 
 ``` 
 
-By starting it using `node test-1.js` and then restarting TwinCAT, we can see that data is incoming! Naturally it's not too clear as I'm just converting the whole data packet to string (to see quickly if things match up).
+By starting it and then restarting TwinCAT, we can see that data is incoming! Naturally it's not too clear as I'm just converting the whole data packet to string (to see quickly if things match up).
 
 ```
 Connected to the 127.0.0.1.1.1
