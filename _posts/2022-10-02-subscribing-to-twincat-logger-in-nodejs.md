@@ -95,7 +95,7 @@ There are some bytes that I couldn't find out.
 
 Here is the final code for subscribing to TwinCAT logger and displaying each log line as object.
 
-https://gist.github.com/jisotalo/80b01d590666dc19b228c732353820a1
+[https://gist.github.com/jisotalo/80b01d590666dc19b228c732353820a1](https://gist.github.com/jisotalo/80b01d590666dc19b228c732353820a1)
 
 ```js
 /*
