@@ -85,7 +85,7 @@ Lisäsin kaksi suodatinta: **Gain** johon laitoin arvoksi -5.20 dB sekä **Limit
 
 ## Nauhoitus
 
-Sitten vaan kasetti nauhuriin, sopivan kohdan haku ja video päälle. Samalla painoin OBS Studiosta **Start Recording**. Näin syntyy kivasti digitoitia VHS-videota mkv-tiedostoon.
+Sitten vaan kasetti nauhuriin, sopivan kohdan haku ja video päälle. Samalla painoin OBS Studiosta **Start Recording**. Näin syntyy kivasti digitoitua VHS-videota mkv-tiedostoon.
 
 ## Kevennys
 
