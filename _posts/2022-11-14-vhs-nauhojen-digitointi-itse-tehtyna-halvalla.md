@@ -87,6 +87,8 @@ Lisäsin kaksi suodatinta: **Gain** johon laitoin arvoksi -5.20 dB sekä **Limit
 
 Sitten vaan kasetti nauhuriin, sopivan kohdan haku ja video päälle. Samalla painoin OBS Studiosta **Start Recording**. Näin syntyy kivasti digitoitua VHS-videota mkv-tiedostoon.
 
+![image](https://user-images.githubusercontent.com/13457157/201743170-76cd3936-7592-413d-b312-aaa63a5835c0.png)
+
 ## Kevennys
 
 Yhdeltä kasetilta löytyi MTV3-kanavalta vuonna 2001 tullutta yöchattia. Laitoin sen YouTubeen koska onhan se nyt legendaarista kulttuuria 2000-luvun alusta.
