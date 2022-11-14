@@ -9,9 +9,9 @@ Jo jonkin aikaa on nurkissa lojunut vanhoja VHS-kotivideoita odottaen siirtämis
 
 Digitointiin on kolme vaihtoehtoa, joita ovat
 
-1) työn teettäminen alan liikkeessä,
-2) itse tekeminen kirjastossa tai
-3) itse tekeminen omilla laitteilla.
+1. työn teettäminen alan liikkeessä,
+2. itse tekeminen kirjastossa tai
+3. itse tekeminen omilla laitteilla.
 
 Ajattelin aluksi ulkoistaa tämän alan liikkeelle, mutta heti ensimmäisen nettihaun jälkeen alkoi se tuntua liian kalliilta (parikymppiä per nauha). Ei ole edes tietoa onko nauhoissa sitä mitä pitäisi.
 
