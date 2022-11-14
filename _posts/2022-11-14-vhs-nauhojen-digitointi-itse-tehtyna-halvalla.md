@@ -8,6 +8,7 @@ Jo jonkin aikaa on nurkissa lojunut vanhoja VHS-kotivideoita odottaen siirtämis
 ## Selvitys
 
 Digitointiin on kolme vaihtoehtoa, joita ovat
+
 1) työn teettäminen alan liikkeessä,
 2) itse tekeminen kirjastossa tai
 3) itse tekeminen omilla laitteilla.
@@ -90,7 +91,7 @@ Sitten vaan kasetti nauhuriin, sopivan kohdan haku ja video päälle. Samalla pa
 
 Yhdeltä kasetilta löytyi MTV3-kanavalta vuonna 2001 tullutta yöchattia. Laitoin sen YouTubeen koska onhan se nyt legendaarista kulttuuria 2000-luvun alusta.
 
-https://www.youtube.com/watch?v=F-UQ1juNCB8
+[https://www.youtube.com/watch?v=F-UQ1juNCB8](https://www.youtube.com/watch?v=F-UQ1juNCB8)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F-UQ1juNCB8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
