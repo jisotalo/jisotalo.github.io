@@ -76,7 +76,7 @@ TYPE ST_SubStructure :
 ```
 
 Then in C# code we need to define data types in C# code following way:
-```C#
+```cs
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public class ST_Structure
 {
@@ -99,7 +99,7 @@ public class ST_SubStructure
 
 Now it's possible to read data and cast it to defined type. Note that the 4.x version does not have async methods so you need to wrap it with `Task.Run()` if needed.
 
-```C#
+```cs
 uint handle = client.CreateVariableHandle("GVL_Test.StructValue");
 var data = (ST_Structure)client.ReadAny(handle, typeof(ST_Structure));
 client.DeleteVariableHandle(handle);
@@ -115,7 +115,7 @@ The 6.x version seems to be a full rewrite or atleast it is dramatically evolved
 
 It's of course still possible to read as before, but the data type can be provided as T and await can be used, which is nice.
 
-```C#
+```cs
 var handle = await client.CreateVariableHandleAsync("GVL_Test.StructValue", CancellationToken.None);
 var data = await client.ReadAnyAsync<ST_Structure>(handle.Handle, CancellationToken.None);
 await client.DeleteVariableHandleAsync(handle.Handle, CancellationToken.None);
@@ -133,7 +133,7 @@ Based on the link, it should be possible to do some magic first and then access 
 
 The final solution was the following. First we create a symbol loader, read all symbols and then access value by hard-coded name.
 
-```C#
+```cs
 //Creating a dynamic symbol loader
 IDynamicSymbolLoader loader = (IDynamicSymbolLoader)SymbolLoaderFactory.Create(client, SymbolLoaderSettings.DefaultDynamic);
 
@@ -161,7 +161,7 @@ Finally, after lot's of testing, the solution was found. The symbols need to be 
 
 When accessing the symbol, it needs to be casted to `DynamicSymbol` which allows dynamic data reading.
 
-```C#
+```cs
 //Creating a symbol loader
 SymbolLoaderSettings settings = new SymbolLoaderSettings(SymbolsLoadMode.DynamicTree);
 IAdsSymbolLoader dynLoader = (IAdsSymbolLoader)SymbolLoaderFactory.Create(client, settings);
@@ -177,7 +177,7 @@ Console.WriteLine(JsonConvert.SerializeObject(data.Value, Formatting.Indented));
 
 Thanks to this, we can create for example a simple `ReadValue(string plcAddress)` helper method:
 
-```C#
+```cs
 async Task<dynamic> ReadValue(string plcAddress) 
 {
   var symbol = await (symbols[plcAddress] as DynamicSymbol).ReadValueAsync(CancellationToken.None);
@@ -186,7 +186,7 @@ async Task<dynamic> ReadValue(string plcAddress)
 ```
 
 And for example a web API to read anything:
-```C#
+```cs
 //read-value-by-name?variableName=GVL_Test.StructValue
 app.MapGet("/read-value-by-name", async (string variableName) =>
 {
@@ -196,7 +196,7 @@ app.MapGet("/read-value-by-name", async (string variableName) =>
 ```
 
 You can also use device notifications with dynamic types:
-```C#
+```cs
 var symbol = (symbols["GVL_Test.StructValue"] as DynamicSymbol);
 
 symbol.NotificationSettings = new NotificationSettings(AdsTransMode.OnChange, 1000, 0);
@@ -211,7 +211,7 @@ symbol.ValueChanged += new EventHandler<ValueChangedEventArgs>((sender, e) =>
 Writing data is also possible using `WriteValueAsync`.
 
 Simple example of a struct variable:
-```C#
+```cs
 var symbol = (symbols["GVL_Test.StructValue.TextValue"] as DynamicSymbol);
 await symbol.WriteValueAsync("a new string value", CancellationToken.None);
 ```
