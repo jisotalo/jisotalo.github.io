@@ -13,6 +13,12 @@ After making some research on latest [TwinCAT.Ads.dll](https://www.nuget.org/pac
 
 <video autoplay muted loop src="https://user-images.githubusercontent.com/13457157/226168174-486438d3-615e-4db5-91c9-712a63a12b4d.mp4"></video>
 
+## --- UPDATE 26.06.2023 ---
+
+It seems that there is a bug or feature in the 6.x library. When dynamically reading data with arrays of structs, the result is an empty object. It simply does not work.
+
+This is very frustrating. I have reported it to Beckhoff Finland support and they were going to contact Germany. We will see..
+
 ## Example project
 
 There is an example project available at [https://github.com/jisotalo/reading-twincat-variables-dynamically-using-csharp](https://github.com/jisotalo/reading-twincat-variables-dynamically-using-csharp)
