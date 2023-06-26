@@ -15,7 +15,7 @@ After making some research on latest [TwinCAT.Ads.dll](https://www.nuget.org/pac
 
 ## --- UPDATE 26.06.2023 ---
 
-It seems that there is a bug or feature in the 6.x library. When dynamically reading data with arrays of structs, the result is an empty object. It simply does not work.
+It seems that there is a bug or feature in the 6.x library (6.0.249). When dynamically reading data with arrays of structs, the result is an empty object. It simply does not work.
 
 This is very frustrating. I have reported it to Beckhoff Finland support and they were going to contact Germany. We will see..
 
