@@ -6,12 +6,12 @@ title: Running TwinCAT 3 projects locally with Usermode Runtime
 I have always disliked the feature of the TwinCAT 3 that you need to run it in your development PC kernel level, just like on a real PLC hardware.
 Other systems, such as TwinCAT 2, Codesys 2 and Codesys 3, run the PLC software in separate soft-PLC application on Windows.
 
-As the TC3 is running in kernel, having different catastrophic faults (divide by zero, null pointer, etc..)  can lead to the blue screen of death (BSOD) in Windows. This causes unnecessary reboots and loss of data, in addition to the wasted working hours. Not to mention forever-loops and other "user-errors" that can happen during development.
+As the TC3 is running in kernel, having different catastrophic faults (divide by zero, null pointer, etc..)  can lead to the blue screen of death (BSOD) in Windows. This causes unnecessary reboots and loss of data, in addition to the wasted working hours. Not to mention forever-loops and other user-errors that can happen during development.
 
 ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/7e1e0b2f-5eb6-4c3b-97e7-50d6ef2edac5)
 
 Other issues I remember facing:
-* adminstrator privileges are required
+* administrator privileges are required
 * some BIOS setting changes are required
 * HyperV isn't supported
 * some processors aren't supported
@@ -47,10 +47,10 @@ Usually final solution is to isolate one of the processor cores to TwinCAT use o
 ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/2aa08e65-d650-4fc9-a764-6bad389b7126)
 
 If you want to fix the issue, try to following links for starters (not in particular order). 
-* https://stackoverflow.com/questions/54264180/twincat3-adswarning-4115-system-clock-setup-fail
-* https://stackoverflow.com/questions/66698779/twincat-activate-configuration-error-0x1028-unable-to-activate
-* https://stackoverflow.com/questions/67481562/cant-set-any-isolated-cores-in-local-virtual-twincat-plc
-* https://stackoverflow.com/questions/59463238/twincat-realtime-startup-of-isolated-cpu-fails
+* [https://stackoverflow.com/questions/54264180/twincat3-adswarning-4115-system-clock-setup-fail](https://stackoverflow.com/questions/54264180/twincat3-adswarning-4115-system-clock-setup-fail)
+* [https://stackoverflow.com/questions/66698779/twincat-activate-configuration-error-0x1028-unable-to-activate](https://stackoverflow.com/questions/66698779/twincat-activate-configuration-error-0x1028-unable-to-activate)
+* [https://stackoverflow.com/questions/67481562/cant-set-any-isolated-cores-in-local-virtual-twincat-plc](https://stackoverflow.com/questions/67481562/cant-set-any-isolated-cores-in-local-virtual-twincat-plc)
+* [https://stackoverflow.com/questions/59463238/twincat-realtime-startup-of-isolated-cpu-fails](https://stackoverflow.com/questions/59463238/twincat-realtime-startup-of-isolated-cpu-fails)
 
 However, if you want to try something else, check out the next chapter.
 
@@ -58,12 +58,12 @@ However, if you want to try something else, check out the next chapter.
 
 Since TwinCAT 3.1.4024.17 (?), there has been a new feature available as beta version in TwinCAT installation: **[TwinCAT 3 Usermode Runtime](https://www.beckhoff.com/fi-fi/products/automation/twincat/tc1xxx-twincat-3-base/tc1700.html)**. It's a TwinCAT 3 runtime running in Windows terminal as a normal application. You can start it with a batch file and close it when needed - by just closing the terminal.
 
-Direct quote from Beckhoff website:
-```
-The TwinCAT 3 Usermode Runtime provides a way to run the applications programmed in TwinCAT without real-time properties in the user mode of the operating system. The TwinCAT 3 Usermode Runtime can be used free of license costs purely for engineering purposes and only requires (trial) licenses of the TwinCAT products used.
+**Direct quote from Beckhoff website:**
 
-This variant makes it possible to run customer programs, so that in the case of engineering systems in particular, which permit neither installation nor operation of the real-time runtime, the test run can take place for development purposes.
-```
+*The TwinCAT 3 Usermode Runtime provides a way to run the applications programmed in TwinCAT without real-time properties in the user mode of the operating system. The TwinCAT 3 Usermode Runtime can be used free of license costs purely for engineering purposes and only requires (trial) licenses of the TwinCAT products used.*
+
+*This variant makes it possible to run customer programs, so that in the case of engineering systems in particular, which permit neither installation nor operation of the real-time runtime, the test run can take place for development purposes.*
+
 You can run TwinCAT PLC application on your PC without doing any BIOS/virtualization fixes and without worrying the faulty PLC code would crash your PC!
 
 ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/4e13938a-86e2-4f93-a57b-e54690145d39)
@@ -116,14 +116,14 @@ The `Boot` directory can be found under `C:\TwinCAT\3.1\Runtimes\UmRT_Default\3.
 
 ## Conclusion
 
-I have been using the Usermode for around last 6 months as my day job PC has issues running in kernel mode. 
+I have been using the Usermode Runtime for around 6 months now, as the PC at my job has issues running TwinCAT in kernel mode. 
 
-It has been a pleasure, even when the product is still in beta. If I mess up something in code, only the Usermode application will crash/hang instead of whole PC. And it's much faster to start!
+It's been a pleasure, even when the product is still in beta. If I mess up something in code, only the Usermode application will crash/hang instead of whole PC. And it's much faster to start and to do run/config/run cycles!
 
 Some issues I have noticed:
-* TwinCAT displays PLC CPU usage as 0% or 99% even though it's working normally (so 99% doesn't mean PLC code is running a forever loop)
+* TwinCAT displays PLC CPU usage as 0% or 99% even though it's working normally (so 99% doesn't mean PLC code is running in a forever loop)
 * `MEMCPY()` is not working with overlapping memory areas
-  * Yes - it shouldn't work in other system either but it still works in my experience
+  * Yes - it shouldn't work in other system either, but it still works in my experience
   * Old codebase I have been working with has had lot's of this kinds of operations that caused problems with Usermode Runtime
   * Converting `MEMCPY()` calls to use `MEMMOVE()` instead fixed the issues
 * The Usermode Runtime sometimes crashes during PLC program download by just disappearing
