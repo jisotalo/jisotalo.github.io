@@ -22,6 +22,7 @@ body {
   font: 1.1em $helvetica;
   color: $darkGray;
   line-height: 1.2;
+  overflow-wrap: break-word;
 }
 
 .container {

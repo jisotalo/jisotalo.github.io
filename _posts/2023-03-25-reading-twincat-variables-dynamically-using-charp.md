@@ -11,7 +11,7 @@ Traditionally this causes some extra work as you need to provide the PLC structs
 
 After making some research on latest [TwinCAT.Ads.dll](https://www.nuget.org/packages/Beckhoff.TwinCAT.Ads) (v. 6.x) and doing some testing, it seemed to be possible. It's possible to read any PLC value, get it as [`dynamic`](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/interop/using-type-dynamic) type and the serialize it. And vice-versa.
 
-<video autoplay muted loop src="https://user-images.githubusercontent.com/13457157/226168174-486438d3-615e-4db5-91c9-712a63a12b4d.mp4"></video>
+<video style="max-width:100%;" autoplay muted loop src="https://user-images.githubusercontent.com/13457157/226168174-486438d3-615e-4db5-91c9-712a63a12b4d.mp4"></video>
 
 ## --- UPDATE 09.02.2024 ---
 
