@@ -189,4 +189,4 @@ The latest supported Firefox version for this Remix OS (Android 4.4.4) is
 
 Now the 9 years old tablet works again and I can use it to monitor electricity prices and weather!
 
-![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/60ae29d1-2cf7-4940-9492-b38e7fcf50ae)
+![Untitled](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/6a32d510-9fdf-4311-aa29-ab0b381fd731)
