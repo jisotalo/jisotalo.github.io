@@ -3,7 +3,7 @@ layout: post
 title: Old Onda v820w tablet - A new life (Installing Remix OS)
 ---
 
-In 2015, I bought a cheap Chinese Android / Windows tablet Onda v820w. It had Windows 8.1 and Android 4 installed (Dual-OS). I tought that it could be useful at university (really wasn't) and it didn't cost much (~99 euros).
+In 2015, I bought a cheap Chinese Android / Windows tablet Onda v820w. It had Windows 8.1 and Android 4 installed (Dual-OS). I thought that it could be useful at university (really wasn't) and it didn't cost much (~99 euros).
 
 
 <https://www.onda-tablet.com/onda-v820w-dual-os-tablet-32gb.html>
@@ -54,7 +54,7 @@ However, updating the OS to newer versions failed, as old links weren't working 
 
 ## Remix OS (Android 4.4.4 custom ROM)
 
-I found an Remix OS image for exactly this tablet version (Onda v820w **v3**). However at first I had lots of issues to get it working. No matter what I tried, I couldn't run the flashing process. Flashing with **Manufacturing Flash Tool** always ended in fastboot errors:
+I found an image of Remix OS for exactly this tablet version (Onda v820w **v3**). Remix OS was a custom ROM of Android for Intel processors. However, at first I had lots of issues to get it working. No matter what I did, I couldn't run the flashing process. Flashing with **Manufacturing Flash Tool** always ended in fastboot errors:
 
 * `Booting to droidboot.img failed`
 * `Process TIMEOUT Failed to execute "fastboot  -s **serial_hidden** -S 100M  oem start_partitioning"`
@@ -64,14 +64,18 @@ I started to Google around again. I needed to finalize this, it was a mission.
 ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/10a670a6-fccf-47ba-b84a-e134fb737d71)
 
 
-After finding the following two links, I managed to flash the operating system. The issue I had was missing Android drivers, even I had installed them. I had to install them **twice**. When installing the driver for the first time, I managed to start the flashing process. But then I had `TIMEOUT` issues and noticed, that the driver was again faulty. Second install fixed it.
+After finding the following two links, I managed to flash the operating system. The issue I had, was missing Android drivers, even when I had already installed them. I had to install them **twice**. 
+
+When installing the driver for the first time, I managed to start the flashing process, which ended in `TIMEOUT` issues. Luckily I noticed, that the driver was again fault, which was fixed by installing the driver again.
 
 * <https://kezhan.info/2015/04/13/Onda-v820w-flash-os-Booting-to-droidbootimg-failed>
 * <https://forum.chuwi.com/t/i-want-to-use-dnx-fastboot-mode-but-the-driver-is-not-installed-on-windows-10/18717>
 
 ### The flashing process step-by-step
 
-Maybe someone else wants to do this too? I have uploaded the files needed to Google Drive: https://drive.google.com/drive/folders/1gOX-rQYtySNIT10-vSpOPvyXRWedZK29
+Maybe someone else wants to save their table from recycling? 
+
+I have uploaded the files needed to Google Drive: <https://drive.google.com/drive/folders/1gOX-rQYtySNIT10-vSpOPvyXRWedZK29>
 
 Note: This is for Onda v820w v3. Not sure about other versions, but the 4pda.to discussion had some links.
 
@@ -81,15 +85,15 @@ Note: This is for Onda v820w v3. Not sure about other versions, but the 4pda.to 
     * Power up the tablet and hit ESC repeatedly to get to the boot menu
     * Select **SCU** to get to the BIOS
 
-    ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/21c73fb6-2436-447d-a1ab-08d680784389)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/21c73fb6-2436-447d-a1ab-08d680784389)
     
     * Go to **Advanced -> LPSS & SCC Configuration**
-    * Enabled *eMMC Secure Erase** 
+    * Enable **eMMC Secure Erase** 
     
-    ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/114787c5-3cbd-42d8-acbe-c85786558525)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/114787c5-3cbd-42d8-acbe-c85786558525)
 
     * Accept changes and reboot. It will take a while.
-    * Now the tablet is empty and it should boot directly to UEFI shell (as there are no operating systems)
+    * The tablet is now empty and it boots directly to the UEFI shell (as there are no operating systems)
 
 2. Install following drivers and applications to your PC
     * [Intel_Android_Driver_v1.9.0](https://drive.google.com/file/d/12hRPizZ-eGdOIGFTRMwwJgNcm_MIllno/view?usp=drive_link)
@@ -100,30 +104,29 @@ Note: This is for Onda v820w v3. Not sure about other versions, but the 4pda.to 
 4. Copy `CUSTOM_CONFIG.INI` from the RemixOS zip to the Manufacturing Flash Tool install location (usually `C:\Program Files (x86)\Intel\Manufacturing Flash Tool`)
 5. Open **Manufacturing Flash Tool** and select **File -> Settings** and set the following
 
-  ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/bf207005-3bef-4005-b35e-27fdf1024116)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/bf207005-3bef-4005-b35e-27fdf1024116)
 
 6. Connect the tablet to the PC using a USB cable. Open **Device manager** and check if the connected device is displayed correctly. If you see **Intel Android AD** with a exclamation mark / warning, you need to update its driver.
     * If so, then download [usb_driver.zip](https://drive.google.com/file/d/1XGu54iKDiiOk_POURUci9yohkFM2D8j5/view?usp=drive_link), unzip it, select **update driver** under the device in device manager and select downloaded file `android_winusb.inf`. Then select `Android ADB interface`.
 
-      |Driver status||
-      |-|-|
-      ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/f8b50e68-a68c-426e-b102-571adb3a0f55) | WRONG!
-      ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/c239c242-9d99-4428-b635-ddb99812af78) | OK!
+|Driver status||
+|-|-|
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/f8b50e68-a68c-426e-b102-571adb3a0f55) | WRONG!
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/c239c242-9d99-4428-b635-ddb99812af78) | OK!
 
-
-  ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/2e9e3924-04bd-4d75-a37a-29057b1807c0)
-
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/2e9e3924-04bd-4d75-a37a-29057b1807c0)
+  
 6. Now in flash tool, click **File -> Open** and select `flash.xml` file from extracted Remix OS archive. The application starts to monitor for connected Android devices.
 7. Shutdown the tablet. Press **volume+**, **volume-** and **power button** at the same time, until the tablet boots into DnX/fastboot mode
 
-  ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/0a8d0857-e0a7-4fe2-9c19-846e4f14e024)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/0a8d0857-e0a7-4fe2-9c19-846e4f14e024)
 
 8. Connect the tablet to the PC with USB cable. The flash tool should start flashing.
     * NOTE: If you get errors, open **device manager** and check the step 7 again (yes, again) 
     * My issue was that I needed to install the driver again at this point! 
 9. If everything goes well, the flashing takes a few minutes and then you have a fresh (ancient) Android installed
 
-  ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/061b33f3-67e5-49ee-b92e-b45dd9753ad5)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/061b33f3-67e5-49ee-b92e-b45dd9753ad5)
 
 ## Rooting the Android on Remix OS
 
@@ -133,15 +136,15 @@ Note: This is for Onda v820w v3. Not sure about other versions, but the 4pda.to 
 4. Download [twrp.zip](https://drive.google.com/file/d/1nMKzRKxzIzT3bJJtrUZERw_RaS8o-LPe/view?usp=drive_link), unzip it and run `recovery.bat`
 5. Tablet should now reboot to Droidboot. Select `Recovery`
 
-  ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/3bc691d5-1714-42d7-ab14-bf63ef2f8fd0)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/3bc691d5-1714-42d7-ab14-bf63ef2f8fd0)
 
 7. Russian TWRP open. Press back button until you are in following menu
 
-  ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/e0af1df7-66bb-4b6b-9c16-9f73d5661061)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/e0af1df7-66bb-4b6b-9c16-9f73d5661061)
 
 8. Select install (upmost). Find the `UPDATE-SuperSU-v2.46.zip` and select it.
 
-    ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/43e1199c-c0ab-4ecf-be3d-dc8e89401ee3)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/43e1199c-c0ab-4ecf-be3d-dc8e89401ee3)
 
 9. Pull the slider to the right to install
 10. Reboot. Device should now be rooted.
@@ -164,7 +167,7 @@ I managed to install working Play Store by doing the following. Not sure what st
 7. Open Lucky Patcher, select **Toolbox -> Install Modded Google Play Store**
 8. Install **Modded Google Play 9.8.07**
 
-  ![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/e0cc5afe-70e6-43f9-9fbb-d7fb679738ac)
+![image](https://github.com/jisotalo/jisotalo.github.io/assets/13457157/e0cc5afe-70e6-43f9-9fbb-d7fb679738ac)
 
 9. Reboot when requested
 10. Test Play Store
