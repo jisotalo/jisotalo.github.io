@@ -131,7 +131,7 @@ Console.WriteLine(JsonConvert.SerializeObject(data, Formatting.Indented));
 ### Reading dynamically (hard-coded variable names)
 
 The documentation is quite awful about the new features. I found some clues from the following link:
-- https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_ads.net/9407528715.html&id=2830513048322293723
+- <https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_ads.net/9407528715.html&id=2830513048322293723>
 
 Based on the link, it should be possible to do some magic first and then access data using dot notation, such as `Symbols.GVL_Test.StructValue`, without providing any data types manually.
 
@@ -159,7 +159,7 @@ The cons of this is that the variable instance path is hard-coded (`GVL_Test.Str
 Having hard-coded variable names is not an option for me. It makes the project very hard to maintain.
 
 The Beckhoff documentation didn't have any solution. All I found was how to do this to any other types than struct:
-* https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_ads.net/9407527691.html&id=3569771638928570568
+* <https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_ads.net/9407527691.html&id=3569771638928570568>
 
 Finally, after lot's of testing, the solution was found. The symbols need to be read using `IAdsSymbolLoader` instead of `IDynamicSymbolLoader`. Then symbols are read using `GetSymbolsAsync()`.
 
