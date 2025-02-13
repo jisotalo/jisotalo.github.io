@@ -97,7 +97,7 @@ Here is the final code for subscribing to TwinCAT logger and displaying each log
 
 [https://gist.github.com/jisotalo/80b01d590666dc19b228c732353820a1](https://gist.github.com/jisotalo/80b01d590666dc19b228c732353820a1)
 
-**Note 02/2025**: There is an improved version available that I recommend to use instead - see the comment by [crishoj](https://github.com/crishoj).
+**Note 02/2025**: There is an improved version available that I recommend to use instead - see the [comment](https://gist.github.com/jisotalo/80b01d590666dc19b228c732353820a1?permalink_comment_id=5436611#gistcomment-5436611) by [crishoj](https://github.com/crishoj).
 
 ```js
 /*
