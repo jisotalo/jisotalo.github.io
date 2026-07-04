@@ -6,9 +6,10 @@ permalink: /about/
 
 I'm an automation engineer from Finland. Coding has been my hobby since I was like 10 years old. Nowadays I do some code for living too, however I'm very interested in automation, electrics and mechanics. 
 
-### Job
-- Development Engineer (Automation)
-- Also some side projects (automation & web)
+### Work
+-  Engineering Director, Automation & Software
+  
+I also have my own business as a side, doing some software and automation programming and consulting.
 
 ### Education
 - Automation/hydraulics engineer MSc (Tampere University of Technology, Finland)
@@ -25,7 +26,9 @@ A **boring** list of some techiques I have used... I hate these kind of lists bu
 - MQTT, REST
 
 ### Some other stuff I work on
-- Valtra 600 & Massey Ferguson 590 tractors
+- CAT 304CCR excavator
+- Valtra 600 tractor
+- Massey Ferguson 590 tractor
 - Summer cottage project
 - Remote monitoring for woodworking workshop and house heating systems
 
