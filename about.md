@@ -17,7 +17,10 @@ I also have my own business as a side, doing some software and automation progra
 
 ### Some ICT stuff
 A **boring** list of some techiques I have used... I hate these kind of lists but still here we are... Not in specific order.
+
 - TwinCAT 2/3, CODESYS, PLC programming
+- IFM (CODESYS 2 & 3)
+- CAN, CANopen, J1939
 - .NET, C#, WinForms
 - C++, Arduino, ESP8266
 - PHP, HTML, CSS
