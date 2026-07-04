@@ -7,7 +7,7 @@ I finally decided to migrate to TwinCAT 4026 on my own Thinkpad. I have very bad
 
 After installing, I tried to open the Package Manager. And an error appeared.
 
-![Error message](img/2026-07-04-twincat-package-manager-issue-with-ifm-ecologone-1.png)
+![Error message](/images/2026-07-04-twincat-package-manager-issue-with-ifm-ecologone-1.png)
 
 ```
 {
@@ -24,7 +24,7 @@ I tried to search for similar errors and I found nothing. Reinstalling didn't he
 
 Luckily I have this picture ready whenever I need it:
 
-![0 days without TwinCAT 3 problems](img/0-days-without-twincat-3-problems.png)
+![0 days without TwinCAT 3 problems](/images/0-days-without-twincat-3-problems.png)
 
 ## Research
 
@@ -32,11 +32,11 @@ I opened _the old reliable_, [the Process Monitor](https://learn.microsoft.com/e
 
 I started the Process Monitor and added a filter containing `webtcpkg`.
 
-![Filter](img/2026-07-04-twincat-package-manager-issue-with-ifm-ecologone-2.png)
+![Filter](/images/2026-07-04-twincat-package-manager-issue-with-ifm-ecologone-2.png)
 
 Then I started capturing and tried to open the Package Manager again. Guess what, the path was there but the process wasn't Mr Hans Beckhoff's production.
 
-![Result](img/2026-07-04-twincat-package-manager-issue-with-ifm-ecologone-3.png)
+![Result](/images/2026-07-04-twincat-package-manager-issue-with-ifm-ecologone-3.png)
 
 So it seems for some reason [IFM ecologOne](https://www.ifm.com/de/en/download/eco100_ecologOne), tool for IFM mobile devices I have installed, was trying to access this file.
 
@@ -44,7 +44,7 @@ So it seems for some reason [IFM ecologOne](https://www.ifm.com/de/en/download/e
 
 I opened the task manager and terminated the `ecologOne.exe` process. After that, the TwinCAT Package Manager started correctly!
 
-![Working](img/2026-07-04-twincat-package-manager-issue-with-ifm-ecologone-4.png)
+![Working](/images/2026-07-04-twincat-package-manager-issue-with-ifm-ecologone-4.png)
 
 ## Conclusion
 
