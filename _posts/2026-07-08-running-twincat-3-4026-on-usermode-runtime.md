@@ -42,7 +42,7 @@ Also changing the AmsNetId isn't working.
 
 The Beckhoff instructions (see [Infosys](https://infosys.beckhoff.com/english.php?content=../content/1033/tc170x_tc3_usermode_runtime/16309326731.html&id=8191215691035851201)) note that the runtime can be multiplied by copying the template.
 
-I copy-pasted the UmRT_Default and named it `UmRT_Runtime`. Now after restarting the PC, It's finally available under the system tray! So for some reason - the UmRT_Default isn't visible there.
+I copy-pasted the `UmRT_Default` and named it `UmRT_Runtime`. Now after restarting the PC, It's finally available under the system tray! So for some reason - the `UmRT_Default` isn't visible there.
 
 Now I can start the UM without using manually the `Start.bat` and things are rolling!
 
